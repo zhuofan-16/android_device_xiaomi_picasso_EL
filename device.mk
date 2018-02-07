@@ -55,6 +55,9 @@ PRODUCT_PACKAGES += \
 # A/B
 AB_OTA_UPDATER := false
 
+#Miui Charge Animation
+PRODUCT_PACKAGES += \
+    chargeonlymode
 # Device Settings
 PRODUCT_PACKAGES += \
     XiaomiParts
