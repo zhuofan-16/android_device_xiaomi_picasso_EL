@@ -12,7 +12,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
 # Get non-open-source specific aspects
+ifeq ($(CUSTOM_BUILD),picasso)
 $(call inherit-product, vendor/xiaomi/picasso/picasso-vendor.mk)
+else
+$(call inherit-product, vendor/xiaomi/picasso_48m/picasso_48m-vendor.mk)
+endif
 
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)

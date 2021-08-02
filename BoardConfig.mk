@@ -157,4 +157,8 @@ BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
 DEVICE_FRAMEWORK_MANIFEST_FILE := $(DEVICE_PATH)/configs/vintf/framework_manifest.xml
 
 # Inherit from the proprietary version
+ifneq ($(CUSTOM_BUILD),picasso)
 -include vendor/xiaomi/picasso/BoardConfigVendor.mk
+else
+-include vendor/xiaomi/picasso_48m/BoardConfigVendor.mk
+endif
