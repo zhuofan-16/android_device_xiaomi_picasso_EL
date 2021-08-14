@@ -105,8 +105,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     org.ifaa.android.manager
 
+# Input
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/idc/uinput-fpc.idc:$(TARGET_COPY_OUT_SYSTEM)/usr/idc/uinput-fpc.idc \
+    $(LOCAL_PATH)/configs/idc/uinput-goodix.idc:$(TARGET_COPY_OUT_SYSTEM)/usr/idc/uinput-goodix.idc
+
 # Keylayout
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/keylayout/gpio-keys.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/gpio-keys.kl \
     $(LOCAL_PATH)/configs/keylayout/uinput-fpc.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/uinput-fpc.kl \
     $(LOCAL_PATH)/configs/keylayout/uinput-goodix.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/uinput-goodix.kl \
     $(LOCAL_PATH)/configs/keylayout/lito-lagoonqrd-snd-card_Button_Jack.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/lito-lagoonqrd-snd-card_Button_Jack.kl
@@ -195,7 +201,12 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     TetheringConfigOverlay \
     WifiOverlay
-
+	
+# Fingerprint
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint@2.1 \
+    vendor.xiaomi.hardware.fingerprintextension@1.0
+	
 # WiFi Display
 PRODUCT_PACKAGES += \
     libdisplayconfig.qti \
