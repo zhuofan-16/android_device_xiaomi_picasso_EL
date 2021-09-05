@@ -129,6 +129,7 @@ TARGET_HAL_POWER_RW_INPUT_DEVICE := true
 # Recovery
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
+SELINUX_IGNORE_NEVERALLOWS := true
 
 # Sepolicy
 include device/qcom/sepolicy/SEPolicy.mk

@@ -5,5 +5,5 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/wave_picasso.mk
+    $(LOCAL_DIR)/lighthouse_picasso.mk
 
