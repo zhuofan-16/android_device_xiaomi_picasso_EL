@@ -19,8 +19,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Hotword blobs
-$(call inherit-product, vendor/xiaomi/google/google.mk)
+# Hotword blo
 
 PRODUCT_BOARD_PLATFORM := lito
 PRODUCT_CHARACTERISTICS := nosdcard
