@@ -48,6 +48,7 @@ public final class DozeUtils {
     protected static final String GESTURE_PICK_UP_KEY = "gesture_pick_up";
     protected static final String GESTURE_HAND_WAVE_KEY = "gesture_hand_wave";
     protected static final String GESTURE_POCKET_KEY = "gesture_pocket";
+    protected static final String GESTURE_RAISE_TO_WAKE_KEY = "gesture_raise_to_wake";
 
     public static void startService(Context context) {
         if (DEBUG) Log.d(TAG, "Starting service");
@@ -70,14 +71,9 @@ public final class DozeUtils {
     }
 
     protected static boolean getProxCheckBeforePulse(Context context) {
-        try {
-            Context con = context.createPackageContext("com.android.systemui", 0);
-            int id = con.getResources().getIdentifier("doze_proximity_check_before_pulse",
-                    "bool", "com.android.systemui");
-            return con.getResources().getBoolean(id);
-        } catch (PackageManager.NameNotFoundException e) {
-            return false;
-        }
+        // Disable proximity support in our Doze service
+        // TODO: Figure out why this doesn't work.
+        return false;
     }
 
     public static boolean enableDoze(Context context, boolean enable) {
@@ -139,6 +135,10 @@ public final class DozeUtils {
 
     protected static boolean isPocketGestureEnabled(Context context) {
         return isGestureEnabled(context, GESTURE_POCKET_KEY);
+    }
+
+    protected static boolean isRaiseToWakeEnabled(Context context) {
+        return isGestureEnabled(context, GESTURE_RAISE_TO_WAKE_KEY);
     }
 
     public static boolean sensorsEnabled(Context context) {
